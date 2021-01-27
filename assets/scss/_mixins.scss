@@ -1,0 +1,8 @@
+@mixin flex-center($row: true) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @if not $row {
+    flex-direction: column;
+  }
+}

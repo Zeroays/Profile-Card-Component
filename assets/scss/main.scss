@@ -1,0 +1,116 @@
+@import "_globals", "_mixins", "_variables";
+
+//Background Image w/ Two Bubbles
+.bg {
+  & > * {
+    position: absolute;
+  }
+  &__bubble--top {
+    top: -34rem;
+    left: -20rem;
+  }
+  &__bubble--bottom {
+    bottom: -41rem;
+    right: -20rem;
+  }
+}
+
+//Profile Card
+.card {
+  @include flex-center($row: false);
+  font-family: "Kumbh Sans", sans-serif;
+  width: 325px;
+  height: 375px;
+  background-color: $card-bg-color;
+  border-radius: 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+
+  //Places all items in card, above bubble-bg
+  &:not(.bubble-bg) {
+    z-index: 1;
+  }
+
+  &__bubble-bg {
+    background-image: url("../images/bg-pattern-card.svg");
+    width: 100%;
+    height: 140px;
+    position: absolute;
+    top: 0;
+  }
+
+  & .profile__picture {
+    border: 5px solid white;
+    background: url("../images/image-victor.jpg");
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    transform: translateY(-25px);
+  }
+
+  & .profile__info {
+    display: grid;
+    //Sets grid, for info about person
+    //person -> Contains name and age
+    grid-template-areas:
+      "person person"
+      "location location";
+    grid-template-columns: repeat(2, 1fr);
+    width: 130px;
+
+    &__person {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      grid-area: person;
+      margin-bottom: 10px;
+
+      &--name {
+        font-weight: 700;
+        font-size: 18px;
+      }
+      &--age {
+        color: $dark-gray;
+      }
+    }
+    &__location {
+      grid-area: location;
+      color: $dark-gray;
+    }
+  }
+  & .profile__stats {
+    display: flex;
+    position: absolute;
+    justify-content: space-around;
+    align-items: center;
+    border-top: 0.5px solid $dark-gray;
+    width: 100%;
+    padding: 30px 20px;
+    bottom: 0;
+    letter-spacing: 1px;
+    &__info {
+      &--value {
+        margin-bottom: 5px;
+        font-weight: 700;
+        font-size: 18px;
+      }
+      &--description {
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $mobile-breakpoint) {
+  .bg {
+    &__bubble--top {
+      top: -34rem;
+      left: -50rem;
+    }
+    &__bubble--bottom {
+      bottom: -37rem;
+      right: -48rem;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "profile-card-component",
+  "version": "1.0.0",
+  "description": "Profile Card Component Project on FrontEndMentor",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scss": "node-sass --watch ./assets/scss -o ./assets/css"
+  },
+  "author": "Vasu Rabaib",
+  "license": "MIT",
+  "devDependencies": {
+    "node-sass": "^5.0.0",
+    "sass": "^1.32.5"
+  }
+}

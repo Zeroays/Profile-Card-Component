@@ -1,0 +1,100 @@
+@font-face {
+  font-family: Kumbh-Sans;
+  src: url("https://fonts.google.com/specimen/Kumbh+Sans"); }
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; }
+
+body {
+  position: fixed;
+  background-color: #19a2ae;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.bg > * {
+  position: absolute; }
+
+.bg__bubble--top {
+  top: -34rem;
+  left: -20rem; }
+
+.bg__bubble--bottom {
+  bottom: -41rem;
+  right: -20rem; }
+
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Kumbh Sans", sans-serif;
+  width: 325px;
+  height: 375px;
+  background-color: white;
+  border-radius: 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden; }
+  .card:not(.bubble-bg) {
+    z-index: 1; }
+  .card__bubble-bg {
+    background-image: url("../images/bg-pattern-card.svg");
+    width: 100%;
+    height: 140px;
+    position: absolute;
+    top: 0; }
+  .card .profile__picture {
+    border: 5px solid white;
+    background: url("../images/image-victor.jpg");
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    transform: translateY(-25px); }
+  .card .profile__info {
+    display: grid;
+    grid-template-areas: "person person" "location location";
+    grid-template-columns: repeat(2, 1fr);
+    width: 130px; }
+    .card .profile__info__person {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      grid-area: person;
+      margin-bottom: 10px; }
+      .card .profile__info__person--name {
+        font-weight: 700;
+        font-size: 18px; }
+      .card .profile__info__person--age {
+        color: #969696; }
+    .card .profile__info__location {
+      grid-area: location;
+      color: #969696; }
+  .card .profile__stats {
+    display: flex;
+    position: absolute;
+    justify-content: space-around;
+    align-items: center;
+    border-top: 0.5px solid #969696;
+    width: 100%;
+    padding: 30px 20px;
+    bottom: 0;
+    letter-spacing: 1px; }
+    .card .profile__stats__info--value {
+      margin-bottom: 5px;
+      font-weight: 700;
+      font-size: 18px; }
+    .card .profile__stats__info--description {
+      font-size: 12px; }
+
+@media screen and (max-width: 375px) {
+  .bg__bubble--top {
+    top: -34rem;
+    left: -50rem; }
+  .bg__bubble--bottom {
+    bottom: -37rem;
+    right: -48rem; } }
